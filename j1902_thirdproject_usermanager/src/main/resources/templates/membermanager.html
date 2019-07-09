@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h2>会员管理</h2>-->
+<table id="dg" class="easyui-datagrid" style="width:400px;height:250px"
+       data-options="url:'usermanager',toolbar:'#tb',fit:true,fitColumns:true,singleSelect:false,pagination:true">
+    <thead>
+    <tr>
+        <th data-options="field:'idx',checkbox:true,width:100">编码</th>
+        <th data-options="field:'userid',width:100">编码</th>
+        <th data-options="field:'username',width:100">用户名</th>
+        <th data-options="field:'upassword',width:100,align:'right'">密码</th>
+        <th data-options="field:'realname',width:100,align:'right'">姓名</th>
+        <th data-options="field:'gender',width:100,align:'right'">性别</th>
+        <th data-options="field:'telphone',width:100,align:'right'">电话</th>
+        <th data-options="field:'useremail',width:100,align:'right'">邮箱</th>
+        <th data-options="field:'address',width:100,align:'right'">地址</th>
+    </tr>
+    </thead>
+</table>
+<div id="tb">
+    标题：<input name="username",type="text"/> <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true,onClick:query"/>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true,onClick:addUser"/>
+    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true,onClick:delUser"/>
+    <a  href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',onClick:update">修改</a>
+</div>
+<div id="win1" align="center" class="easyui-window" title="增加用户" style="width:600px;height:500px"
+     data-options="iconCls:'icon-save',modal:true,closable:false,closed:true">
+    <h2>增加用户信息</h2>
+    <div align="center" id="bigdiv">
+        <div style="margin:20px 0;"></div>
+        <div class="easyui-panel" title="请填写相关信息" style="width:400px">
+            <div style="padding:10px 60px 20px 60px">
+                <form id="ff" method="post">
+                    <table cellpadding="5" id="dg2" >
+                        <tr>
+                            <td>用户名:</td>
+                            <td><input class="easyui-textbox" name="username1" id="username" type="text"  data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>密码:</td>
+                            <td><input class="easyui-textbox" type="text" id="password" name="upassword1" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>姓名:</td>
+                            <td><input class="easyui-textbox" type="text" id="realname" name="realname1" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>性别:</td>
+                            <td><input class="easyui-textbox" name="gender1" id="gender" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>电话:</td>
+                            <td><input class="easyui-textbox" name="telphone1" id="telphone" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>邮箱:</td>
+                            <td><input class="easyui-textbox"   name="useremail1" id="email" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>地址:</td>
+                            <td><input class="easyui-textbox"   name="address1" id="address" data-options="required:true"></input></td>
+                        </tr>
+                    </table>
+                </form>
+                <div style="text-align:center;padding:5px">
+                    <a href="javascript:void(0)" class="easyui-linkbutton"  data-options="onClick:addusertj">提交</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="onClick:addchongzhi">重置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="win2" align="center" class="easyui-window" title="修改用户" style="width:600px;height:500px"
+     data-options="iconCls:'icon-save',modal:true,closable:false,closed:true">
+    <h2>修改用户信息</h2>
+    <div align="center" id="bigdiv2">
+        <div style="margin:20px 0;"></div>
+        <div class="easyui-panel" title="请填写相关信息" style="width:400px">
+            <div style="padding:10px 60px 20px 60px">
+                <form id="ff2" method="post">
+                    <table cellpadding="5" id="dg3" >
+                        <tr>
+                            <td>用户名:</td>
+                            <td><input class="easyui-textbox" name="username" id="username2" type="text"  data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>密码:</td>
+                            <td><input class="easyui-textbox" type="text" id="password2" name="upassword" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>姓名:</td>
+                            <td><input class="easyui-textbox" type="text" id="realname2" name="realname" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>性别:</td>
+                            <td><input class="easyui-textbox" name="gender" id="gender2" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>电话:</td>
+                            <td><input class="easyui-textbox" name="telphone" id="telphone2" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>邮箱:</td>
+                            <td><input class="easyui-textbox"   name="useremail" id="email2" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>地址:</td>
+                            <td><input class="easyui-textbox"   name="address" id="address2" data-options="required:true"></input></td>
+                        </tr>
+                    </table>
+                </form>
+                <div style="text-align:center;padding:5px">
+                    <a href="javascript:void(0)" class="easyui-linkbutton"  data-options="onClick:updatetj">提交</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="onClick:updatechongzhi">重置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //批量删除用户
+    function delUser() {
+        $.messager.confirm('确认','您确认想要删除记录吗？',function(r){
+            if (r){
+                var selectedArray=$("#dg").datagrid("getSelections");
+                var selectA=[];
+                var ids;
+                if(selectedArray.length>0){
+                    $.each(selectedArray,function(i,v){
+                        selectA.push(v.userid);
+                    });
+                    console.log("selectA"+selectA);
+                    ids=selectA.join(",");
+                    console.log("ids"+ids);
+                    $.ajax({
+                        url:"deluser",
+                        type:"POST",
+                        data:"ids="+ids,
+                        success:function(msg){
+                            console.log(msg);
+                            $("#dg").datagrid('reload');
+                        },
+                        error:function (msg) {
+                        }
+                    });
+                }else {
+                    $.messager.alert('警告','请先选择删除的行！');
+                }
+            }
+        });
+    }
+    //模糊查询
+    function query() {
+        //alert("assd");
+        $("#dg").datagrid('load',{
+            username:$("[name='username']").val()
+        });
+    }
+    //添加用户弹框
+    function addUser() {
+        $.messager.confirm('确认','您确认要添加吗？',function (r) {
+            if(r){
+                $('#win1').window('open');
+            }
+        });
+    }
+    //添加提交修改数据库
+    function addusertj() {
+        var url="addusertj";
+        var username=$("[name='username1']").val();
+        var upassword=$("[name='upassword1']").val();
+        var realname=$("[name='realname1']").val();
+        var gender=$("[name='gender1']").val();
+        var telphone=$("[name='telphone1']").val();
+        var useremail=$("[name='useremail1']").val();
+        var address=$("[name='address1']").val();
+        //alert(useremail+"地址")
+        $.post(url,{username:username,upassword:upassword,realname:realname,
+            gender:gender,telphone:telphone,useremail:useremail,address:address},function (msg) {
+            if(msg=="success"){
+                $.messager.alert('恭喜你','添加成功！');
+                $('#win1').window('close');
+                $("#dg").datagrid('reload');
+            }
+        });
+
+    }
+    //修改用户弹出来一个框,框里显示需要修改的用户信息
+    function update() {
+        $.messager.confirm('确认','您确认要修改吗？',function (r) {
+            if(r){
+                var selectedArray=$("#dg").datagrid("getSelections");
+                if(selectedArray.length==1){
+                    var selectedhang=$("#dg").datagrid("getSelected");
+                    var uid=selectedhang.userid;
+                    // alert(uid);
+                    var url="findUserByUid?uid="+uid;
+                    $.post(url,{uid:uid},function (msg) {
+                        var user=eval(msg);
+                        console.log(user.upassword+"密码");
+                        $("#username2").textbox('setValue',user.username);
+                        $("#password2").textbox('setValue',user.upassword);
+                        $("#realname2").textbox('setValue',user.realname);
+                        $("#gender2").textbox('setValue',user.gender);
+                        $("#telphone2").textbox('setValue',user.telphone);
+                        $("#email2").textbox('setValue',user.useremail);
+                        $("#address2").textbox('setValue',user.address);
+                    });
+                    $('#win2').window('open');
+                }else {
+                    $.messager.alert('警告','请先选择一行！');
+                }
+            }
+        });
+    }
+    // //修改框里用户的信息，并且提交到数据库
+    function updatetj() {
+        $('#ff2').form('submit', {
+            url:"updateUser",
+            onSubmit: function(param){
+                param.p1=$("[name='username']").val();
+                param.p2=$("[name='upassword']").val();
+                param.p3=$("[name='realname']").val();
+                param.p4=$("[name='gender']").val();
+                param.p5=$("[name='telphone']").val();
+                param.p6=$("[name='useremail']").val();
+                param.p7=$("[name='address']").val();
+                //  param.p5=uid;
+                //  alert(param.p5);
+            },
+            success:function(data){
+                $.messager.alert('恭喜你','修改成功！');
+                $('#win2').window('close');
+                $("#dg").datagrid('reload');
+            }
+        });
+    }
+    //修改重置按钮
+    function updatechongzhi() {
+        $("#win2 form input").each(function () {
+            $(this).val("");
+        });
+    }
+    //添加重置按钮
+    function addchongzhi() {
+        $("#win1 form input").each(function () {
+            $(this).val("");
+        });
+    }
+</script>
+</body>
+
+</html>

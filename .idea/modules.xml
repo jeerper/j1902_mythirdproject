@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/j1902_mythirdproject.iml" filepath="$PROJECT_DIR$/j1902_mythirdproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject_common/j1902_thirdproject_common.iml" filepath="$PROJECT_DIR$/j1902_thirdproject_common/j1902_thirdproject_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject_pojo/j1902_thirdproject_pojo.iml" filepath="$PROJECT_DIR$/j1902_thirdproject_pojo/j1902_thirdproject_pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject_provider/j1902_thirdproject_provider.iml" filepath="$PROJECT_DIR$/j1902_thirdproject_provider/j1902_thirdproject_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject_server/j1902_thirdproject_server.iml" filepath="$PROJECT_DIR$/j1902_thirdproject_server/j1902_thirdproject_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject_usermanager/j1902_thirdproject_usermanager.iml" filepath="$PROJECT_DIR$/j1902_thirdproject_usermanager/j1902_thirdproject_usermanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_thirdprojrct_login/j1902_thirdprojrct_login.iml" filepath="$PROJECT_DIR$/j1902_thirdprojrct_login/j1902_thirdprojrct_login.iml" />
+    </modules>
+  </component>
+</project>
